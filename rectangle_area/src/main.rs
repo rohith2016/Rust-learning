@@ -14,6 +14,15 @@ impl Rectangle {
     }
 }
 
+impl Rectangle {
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            length: size,
+            width: size,
+        }
+    }
+}
+
 fn main() {
     let rect = Rectangle {
         length: 50,
@@ -24,9 +33,10 @@ fn main() {
         length: 40,
         width: 15,
     };
+    let square = Rectangle::square(20);
     println!("rect: {:#?}", rect);
     println!("Area of rectangle is {} square pixels", rect.area());
     println!("Area of rectangle is {} square pixels", rect2.area());
     println!("Rect can hold Rect2: {}", rect.can_hold(&rect2));
-
+    print!("Area of square is {} square pixels",  square.area());
 }
